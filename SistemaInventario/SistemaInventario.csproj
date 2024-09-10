@@ -1,0 +1,1199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FF5DA78C-363E-41C0-82D6-AB5BEC4239F7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SistemaInventario</RootNamespace>
+    <AssemblyName>SistemaInventario</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.4.1\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.4.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="FrmAñadirToner.aspx" />
+    <Content Include="FrmEquipo.aspx" />
+    <Content Include="FrmError.aspx" />
+    <Content Include="FrmGridRepuestos.aspx" />
+    <Content Include="FrmGridToners.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="FrmInicio.aspx" />
+    <Content Include="FrmMantenimiento.aspx" />
+    <Content Include="FrmMigrarCustodios.aspx" />
+    <Content Include="FrmMigrarToners.aspx" />
+    <Content Include="FrmPrincipal.aspx" />
+    <Content Include="FrmReportes.aspx" />
+    <Content Include="FrmRepuestos.aspx" />
+    <Content Include="FrmToner.aspx" />
+    <Content Include="FrmVisorImagenes.aspx" />
+    <Content Include="FrmYupak.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="ImagenesDeLosEquipos\codigo bat para creear carpetas\gfg.bat" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="ImagenesDeLosEquipos\0003\17074249652947057944162917871883.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0005\17150918819524819879883910708182.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0006\17074034876272250569776851671577.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0006\6.png" />
+    <Content Include="ImagenesDeLosEquipos\0007\1707403793481809746586696101171.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0007\7.png" />
+    <Content Include="ImagenesDeLosEquipos\0009\17074029070834487135412194748439.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0009\7.png" />
+    <Content Include="ImagenesDeLosEquipos\0009\9.png" />
+    <Content Include="ImagenesDeLosEquipos\0009\IMG_20230802_162834.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0009\Sin título.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0009\wallpaperbetter.com_1366x768.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0011\1707402574785470313952920139468.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0014\16923739804295265104587561671170.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0014\16923750299053272005467437653204.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0015\15.png" />
+    <Content Include="ImagenesDeLosEquipos\0020\17074949400185537646384571018007.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0021\17074951385585245401827533020121.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0024\16922175247663255590274094800036.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0026\17073373968441435863393130758251.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0027\27.png" />
+    <Content Include="ImagenesDeLosEquipos\002n\17150932394813697036085547998882.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0042\17073982030551665874584277696022.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0046\17072510737798215726899280947643.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0050\17073130173763173530481380579226.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0051\17072484092226963032325884367225.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0053\17072472233106387460523662718838.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0053\53.png" />
+    <Content Include="ImagenesDeLosEquipos\0054\17073128395078412472667600815177.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0054\17073129713781418396567784618310.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0055\17150913508382793990167942468947.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0056\16916779694681708624715502876847.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0056\16916780274605443414337132778448.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0056\IMG_20230810_091820_438~2.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0056\IMG_20230810_092623_970~2.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0057\17072373695476025272514819240615.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0057\57.png" />
+    <Content Include="ImagenesDeLosEquipos\0058\17074950182913791865333522629903.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0060\17073369225715776858349284654077.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0060\60.png" />
+    <Content Include="ImagenesDeLosEquipos\0063\17156177872313231668492255550664.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0063\63.png" />
+    <Content Include="ImagenesDeLosEquipos\0063\IMG_20240214_102125_952.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0091\17074932598497251852689023245702.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0092\IMG_20240206_082803_120.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0092\IMG_20240206_082804_514.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0094\0094.png" />
+    <Content Include="ImagenesDeLosEquipos\0094\17073193248906378107973929429745.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0095\0095.png" />
+    <Content Include="ImagenesDeLosEquipos\0095\17073202662404353605254405665426.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0096\0096.png" />
+    <Content Include="ImagenesDeLosEquipos\0096\17073234873305118257142140213972.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0096\17150943439594125441616387940952.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0097\0097.png" />
+    <Content Include="ImagenesDeLosEquipos\0097\17073237366723901881607343765942.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0098\0098.png" />
+    <Content Include="ImagenesDeLosEquipos\0098\17073244083073725233811824493112.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0099\17073232847792393621672426927024.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0104\17073195863683821814328832716321.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0105\16916832429098222234555901174297.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0105\IMG_20230810_105856_224~2.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0106\106.png" />
+    <Content Include="ImagenesDeLosEquipos\0106\17073184588841068826093274619738.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0109\IMG_20240513_145107_914.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0111\17156177134287082898043643988983.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0112\Screenshot_20240513-160659.png" />
+    <Content Include="ImagenesDeLosEquipos\0113\IMG_20240513_150034_001.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0114\cpu lg.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0115\IMG_20240513_150034_001.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0116\IMG_20240513_145009_077.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0118\IMG_20240513_114126_803.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0136\1707227579429801321184455118224.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0136\17072276189606163799165939695311.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0136\17072278389894971864209037301513.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0137\IMG_20240229_104937_107.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0140\16916754500443442308839938563424.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0144\144.png" />
+    <Content Include="ImagenesDeLosEquipos\0144\IMG_20240507_084108_338.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0146\16916834778628609660406707069845.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0146\IMG_20230810_111019_565~2.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0147\IMG_20230810_094211_037.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0147\IMG_20230810_094252_526.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0152\16923012138381687465990848530804.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0152\17069042560693250100271207701924.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0162\16921190936782279987366176839702.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0162\IMG_20230815_113111.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0162\IMG_20230815_113132.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0164\17071491724003925574635540620560.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0166\15.png" />
+    <Content Include="ImagenesDeLosEquipos\0166\17151765550077472810871324897342.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0166\Captura.png" />
+    <Content Include="ImagenesDeLosEquipos\0166\IMG_20240229_104218_237.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0167\16922136986058538293530049790173.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0172\172.png" />
+    <Content Include="ImagenesDeLosEquipos\0172\IMG_20240214_101739_620.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0175\IMG_20240209_115707_634.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0176\17073999916708827856103131962946.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0179\17074956052661451075612891898798.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0222\1709053164013480073456426500045.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0223\17090529474647476315717239169573.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0224\17090529843407109623710409220682.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0225\1715178521274195182310802872156.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0230\17090530917575486746623945162890.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0231\17090554269195289106932718224289.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0350\17152740990766162025617750825466.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0350\17152741259492569631859360356629.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0402\IMG_20240229_105715_971.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0423\17074249032915968550227804097119.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0432\17150919118238911883618639672939.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0463\IMG_20240214_094322_159.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0471\17074034033017533772622484873286.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0471\17074034236013214940820147585147.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0495\17074028620654938242210304987378.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0499\17074028184471590034746084307278.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0515\IMG_20240206_082718_793.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0518\16916783098163654645114401152044.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0519\17074026229268657853167463954812.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0552\17151024896105697407034279623728.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0553\17074925452894353286228794932716.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0566\IMG_20240507_084411_450.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0575\575.png" />
+    <Content Include="ImagenesDeLosEquipos\0626\17074952287866425776962461754467.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0662\17071613967103137700946161407668.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0663\17071612532702533996287025117883.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0679\17071612015765473188192881446838.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0748\1707318642294726621888098103506.jpg" />
+    <Content Include="ImagenesDeLosEquipos\0758\17072524156965066270843767684555.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1012\17072509408337326752340961878144.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1035\17072520078126694248974492230036.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1060\17073124302062106955104857981720.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1072\17072484881986382871262289406608.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1073\1707248559864681326183026416263.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1085\17072477652873811893550079809838.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1088\17072489135065920247235860757992.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1092\17073131271793240155278800172093.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1093\17073131011478396391357740931732.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1111\17072514947878755777399110703800.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1112\17072511918888243094005312229561.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1113\IMG_20240229_104903_597.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1124\17150930268695799110706839715676.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1126\17072383456335912574732403412239.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1126\17072387959547053131088624047442.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1133\1113.png" />
+    <Content Include="ImagenesDeLosEquipos\1134\17072375265153148255790938462075.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1135\17072377431816339949009483625096.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1159\17150913873031557550961262019038.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1164\17072511379891593227595284383946.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1165\IMG_20240507_084435_516.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1388\16921160701848413655013746645335.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1390\16921165690232479050674681752082.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1391\16921162734251080133191639967515.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1395\1692117846698775965451389763085.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1453\IMG_20230810_085549_137~2.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1463\16921175077342753291909735078066.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1477\16921173478576343407992076458314.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1494\17071498348647679934915294468784.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1495\17071506716166607791054991512078.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1505\IMG_20230810_095329_739~2.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1531\17072335766352657917959396461985.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1531\IMG_20240229_105656_679.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1599\17073194001694396666036140334644.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1608\17073176846705385048546238197782.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1611\17073200636341107016871964247068.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1618\17073235842884354201191318813236.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1632\1707323842374235444130700905195.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1633\17073239996795599600249723483814.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1633\17073242118715230281336299965913.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1638\17073245908084467069234291799070.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1639\17073244836556906812678586194872.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1640\17073247924524924235531338594573.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1646\17073231674624764812642458101435.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1658\1658.png" />
+    <Content Include="ImagenesDeLosEquipos\1658\17073178125772954720643402072173.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1658\17073181233397503802041274396392.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1674\1707319779309235865691974265630.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1674\17073198070811520049356715997161.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1687\17073196718825443865594685211020.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1692\17074931886971626751336577894436.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1695\17073184029267150329181373903582.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1696\17073181908418408545347212908187.jpg" />
+    <Content Include="ImagenesDeLosEquipos\17071405832398586669584481600990.jpg" />
+    <Content Include="ImagenesDeLosEquipos\17071408143476317610294537398514.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1707141188613752904634507157078.jpg" />
+    <Content Include="ImagenesDeLosEquipos\17071412208941181811967496631406.jpg" />
+    <Content Include="ImagenesDeLosEquipos\17071416054408865113781253650205.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1742\17073188601571315406814574803221.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1839\IMG_20240514_084459_601.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1841\IMG_20240513_144825_799.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1866\17073368043515702430679656255719.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1867\17073371067298009210395950080905.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1868\17073391983546227006163035774050.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1919\17156179924323783066115286881370.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1927\IMG_20240514_083739_356.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1928\IMG_20240514_083756_125.jpg" />
+    <Content Include="ImagenesDeLosEquipos\1929\IMG_20240513_144825_799.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2007\IMG_20240229_105727_090.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2008\17073245125291525088321605144962.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2016\17072497707653676749986367396979.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2018\17079181442847675365172988253329.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2021\17074954331541819580172878199144.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2030\17090550480043923911717401249545.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2046\17072345507316183723072325817970.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2052\17079204311962383326057489491288.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2193\17071404278998114867380239066712.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2194\17071408143476317610294537398514.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2194\IMG_20230810_094143_501.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2199\17090532039538784378873029331032.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2200\17090535463625774580239314230042.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2202\IMG_20230810_105604_187~2.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2231\16922209427907160042868979869224.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2232\17090528917755634026946370698684.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2233\17090552832763431181035538218082.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2255\IMG_20230810_095659_782~2.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2256\17072356740144131967181334662352.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2257\IMG_20230810_100037_982~2.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2258\17071454101408129141426969259712.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2258\17071463591041533132645599352248.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2259\17071450522022852434448473622187.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2260\17071453108481369757259962083624.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2318\IMG_20240229_104924_933.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2327\16922138547208444203207790885484.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2331\IMG_20230810_091900_499~2.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2334\17071615156672958993678392141251.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2337\17071615939098056173854397607763.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2342\16922054891036182940132298864765.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2345\17151786089352444906252285017637.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2354\17090535126241546759579847676361.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2374\17072290598396361832851214549808.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2374\17072290760509008395241770280683.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2400\IMG_20240214_102025_815.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2436\17074007646501461573351128439485.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2439\16922073122942485371812533872128.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2451\1715093381170335936405133957404.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2476\17079206387274306368317919989343.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2477\IMG_20240209_115711_910.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2482\17150914350203529372380107451739.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2502\16921161847922426748162822886883.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2502\16921164565613372063701388342816.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2570\moni lg.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2572\17073979016645490287991491657760.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2573\17072330751305822622449800070615.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2585\IMG_20240514_085719_002.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2586\2586.png" />
+    <Content Include="ImagenesDeLosEquipos\2587\IMG_20240514_085603_864.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2588\IMG_20240514_085534_709.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2589\17156189322856794706725037834500.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2591\IMG_20240514_085357_748.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2592\IMG_20240514_085333_262.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2593\IMG_20240514_085426_486.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2594\IMG_20240514_085511_265.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2606\Screenshot_20240513-161732.png" />
+    <Content Include="ImagenesDeLosEquipos\2610\IMG_20240514_084013_000.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2629\IMG_20240513_150530_414.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2639\IMG_20240514_083832_242.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2767\IMG_20240514_085651_373.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2774\IMG_20240514_083906_379.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2776\171561837481735504520881524147.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2777\IMG_20240514_083944_697.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2781\IMG_20240514_084159_302.jpg" />
+    <Content Include="ImagenesDeLosEquipos\2852\IMG_20240514_084316_868.jpg" />
+    <Content Include="ImagenesDeLosEquipos\288\IMG_20240514_085038_481.jpg" />
+    <Content Include="ImagenesDeLosEquipos\295\IMG_20240514_084128_717.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3145\1709055945727207252148502657051.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3146\16922143742678490410823678191580.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3147\17072372941346714157304970564885.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3366\17072515825443357586647656670209.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3382\17071469504377382609154995267375.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3383\17071462784046617004836810392919.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3386\17090549410838956521379935056481.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3501\17074964599522121058236432640183.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3501\3501.png" />
+    <Content Include="ImagenesDeLosEquipos\3502\17073985133336715481287040366002.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3503\3503.png" />
+    <Content Include="ImagenesDeLosEquipos\3503\IMG_20240214_091021_740.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3504\17079215194424753893476261072121.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3504\3504.png" />
+    <Content Include="ImagenesDeLosEquipos\3505\3505.png" />
+    <Content Include="ImagenesDeLosEquipos\3505\IMG_20240214_092150_398.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3506\17079177381666805699485825702005.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3507\17074947882385936222152729078283.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3508\17073984466521491344252262239733.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3508\17073984633431732101965488114255.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3509\IMG_20240214_091115_924.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3510\17079214126287207843737287152162.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3511\17079202311784995510133192671362.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3512\1707917774403752208119236319859.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3548\3548.png" />
+    <Content Include="ImagenesDeLosEquipos\3578\16922175961477730075178342312538.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3580\16922170400559094074472066066529.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3584\16922075560147944672248950702880.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3586\17073124996904956493193828001626.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3588\1707397966649866281415621350203.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3588\3588.png" />
+    <Content Include="ImagenesDeLosEquipos\3589\17072494348429026137226136721838.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3589\3589.png" />
+    <Content Include="ImagenesDeLosEquipos\3590\17074983477546691166025570951820.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3591\17072499938101551818375343608171.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3591\17072503565869134389227217889759.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3592\1692205267544754973730647857686.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3592\3592.png" />
+    <Content Include="ImagenesDeLosEquipos\3597\17152705229353384574597847556099.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3598\17072494661002854123705643969047.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3599\1707498215358907381776496928899.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3600\17072500692161027052416934848978.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3601\16922048183184189876426499913236.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3628\17090460105278400885388795674977.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3641\17090547696393247139369608208207.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3642\1709054819565357526446278213858.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3647\17090546486348586392366958882064.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3650\17090549878227123888146182088553.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3653\17074966177591857608120323032816.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3655\17073978274864021808417771586089.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3656\17073382163938558451789371635949.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3665\1707921333251424511702970099374.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3666\17079205432444075379654077949863.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3667\1715607974395836594824957516599.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3668\17150925688842708327598923827149.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3669\17072502347807514066298760344832.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3670\IMG_20240229_104951_948.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3672\17090553531031262943339353060194.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3673\1709053885774532868715661421790.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3687\17072309204871091565873513490490.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3697\3697.png" />
+    <Content Include="ImagenesDeLosEquipos\3697\IMG_20240227_102815_604.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3765\17071448643792201015868760332001.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3923\IMG_20240214_101619_626.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3928\16921175829371418264662629896468.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3930\16921181157538451315413419038553.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3946\1707251419804295213058602027287.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3956\3956.png" />
+    <Content Include="ImagenesDeLosEquipos\3957\17150925126901520417745552796313.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3958\17151989429581595775247151437532.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3962\17072495696042922749485027477008.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3995\17087187580318588353614918101458.jpg" />
+    <Content Include="ImagenesDeLosEquipos\3995\3995.png" />
+    <Content Include="ImagenesDeLosEquipos\4011\170905371252097290393196867662.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4012\17090537425378513802030919430189.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4013\17090537758958412498243039367511.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4014\17090538313165258378331656232258.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4016\17079186837352741365419511995721.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4020\17072283722552146437545094845283.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4021\17072386542566369647455670105871.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4021\17072386741077277351649489857057.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4022\IMG_20230810_094920_434~2.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4023\17090545487761138840697477573708.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4024\17090539343534064968831881569433.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4025\17073377576084187360224983207964.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4025\4025.PNG" />
+    <Content Include="ImagenesDeLosEquipos\4027\17073383993841217312578330845921.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4030\17073388433915532939240736997757.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4031\17073386666004004776736046254946.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4034\17072291116151832981782164250794.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4045\17072521671338335959700099986784.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4049\17080059678288045824136968163015.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4196\16916782337522499583953137936144.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4196\IMG_20240214_101739_620.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4372\17072523718803162788196132315786.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4373\17072523399612557575183520102197.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4373\4373.png" />
+    <Content Include="ImagenesDeLosEquipos\4376\17090536687206240908019128984488.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4377\17090532396719039447029171078569.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4377\17090532576108597598056579748536.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4384\17151027517333552998998647534560.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4386\17079176210637951856042288993671.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4388\17074923268366843365321987839746.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4389\17074921630773946036761685160645.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4390\17073370347437919984866310324911.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4391\17073364525415886247677009559500.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4393\IMG_20240206_082223_703.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4393\IMG_20240206_082226_563.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4395\16922054195238955655620045271859.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4397\17079216437903080790710506334394.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4399\17079180129435262254036646248041.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4402\IMG_20240206_082148_049.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4404\17074981224871214193287756123092.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4405\17150919374065897225303131115269.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4406\17150914737246565058221304178523.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4406\17150914856601060022243628273207.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4410\16921168274427474925249120682284.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4411\16922055670359049650506906102450.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4412\1707227648713550325666540989729.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4412\1707227684750933526506618921550.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4414\17079203546372409418134037616490.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4415\IMG_20240214_091015_584.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4416\17079178671355751070335056509323.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4490\1709053598023208939842533169670.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4495\17073177458645560331180509531981.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4498\17072277763773924327030533792320.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4500\17071463998893990377314861371304.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4505\16911719633543778708648244014417.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4505\IMG_20230804_124016_862.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4525\17072358498026196512661356884436.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4525\17072358986883794427337128906185.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4525\17072364364305926259169886816009.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4526\17074026947943617266545090690746.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4527\IMG_20240206_082204_866.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4528\IMG_20240206_082121_839.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4529\17072385255953586574218746401887.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4530\17072389083817398565723211104687.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4532\IMG_20230810_114823_094.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4533\IMG_20230810_114537_404.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4534\16916856648257317934103652408097.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4536\17072291748731234606466227078338.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4536\17072291875214346898592473352734.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4537\17072283185243700031450530462304.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4537\17072283311492729782562698719663.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4542\IMG_20240227_094625_536.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4543\IMG_20240214_101626_743.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4552\17072519248153392717423438142805.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4556\16921179167778721401323846424568.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4557\16921172205751886489255289189268.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4558\17074242903505467109434747085914.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4559\17074234202084660423427863409405.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4560\17074239899356969095739205523098.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4561\17072389730438628957179799695204.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4564\17074033447398813061298278941015.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4565\17074023925707101837593826537221.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4566\16922056438031875968780396852376.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4567\17074929208741290997107030719045.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4568\17073116759311447096522270911669.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4569\17151158458036193005931661777232.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4570\17072335310008363279850590065255.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4571\17073180702012670140088468831987.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4571\1707318269036837748285652077057.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4572\17151028038594855668327196100258.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4574\17074965178223685677819402187476.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4575\17079176909667056378578875987244.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4576\17074253505054783502304710340710.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4578\1707400483586685728175857810864.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4579\17073235424209091421618147435011.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4580\17073237770431699970512251735954.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4581\17072390610427351491483417796769.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4583\17072359720392007904164483699284.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4583\17072360007697061646065453434963.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4584\17072374497865614361279124205003.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4587\IMG_20240229_104508_414.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4588\17072296150468887026136393987838.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4588\17072296546867267402416190430056.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4589\17072332756035783900504239597642.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4590\17072507721214224185717148012978.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4593\17072387059782523989290982444784.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4594\17090540546733246832715656625355.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4595\1709054402512919873689696897915.jpg" />
+    <Content Include="ImagenesDeLosEquipos\461\17074243291725355752002784369910.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4653\17079202965506863004731846757307.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4654\17079184362813157326380532973726.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4655\IMG_20240214_090759_156.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4656\17079213708583958454665113324061.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4658\17090543069851803539762350228406.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4660\1715608027791974947658887341271.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4662\1692215405135607569881208575219.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4663\IMG_20240229_104048_973.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4664\IMG_20240229_105521_084.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4665\17075000879461974523576140479924.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4666\IMG_20240227_094826_016.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4669\17073362565373384536706234836499.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4672\IMG_20230810_125113_596~2.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4673\Screenshot_20240513-083406.png" />
+    <Content Include="ImagenesDeLosEquipos\4673\Screenshot_20240513-083613.png" />
+    <Content Include="ImagenesDeLosEquipos\4674\16922229035914035890774826540683.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4675\16922227225921001718370511296704.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4675\16922227963854302598676716054472.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4676\16922229784211418425067349810770.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4677\16922230706294353480119773199950.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4679\17090541408974860272805545308188.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4680\1709054110857225536062519336578.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4681\1709054171791513399960836551928.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4683\17072508723531003998686990187648.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4684\17072508216354513739619982929782.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4686\17073356018473929547973943106528.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4686\17073356642508632998787173278648.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4687\17071461575115820293919527828862.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4688\17071500907923356996785864685596.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4689\17090533071305783729361272867807.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4691\17090544462136367474003522207225.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4692\17073371961398696378895096643903.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4694\17072293893917052181153519627262.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4694\17072294048483969326442193996549.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4695\17073361893925600109773733229818.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4696\17072493673054272006164204585710.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4697\17073980208658188105045694130437.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4701\17072511111705913930053352546147.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4702\17073125331414224990041621510642.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4703\1707252269650897154957058100459.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4704\1707493892523274595439666199576.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4705\17073248936224637240850219806533.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4706\IMG_20240206_082132_753.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4707\17072331091232790877574673989423.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4708\IMG_20240214_091144_347.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4709\IMG_20240214_092132_551.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4711\16921174253013280879237743867378.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4716\IMG_20240229_105753_198.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4717\17072478319985309175398517612998.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4717\1707248117356946118580222294880.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4718\1707312567876341558651854053358.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4719\17073980692021882260739532219456.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4720\17072489813975323141178991678136.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4721\17072486077282410793134175547289.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4726\17071410033385283444607775679891.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4727\17150937308608910435741544914812.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4728\17072495201805650832388500724107.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4729\16916851426984512854891014192675.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4730\17069071228553342984783183598764.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4733\17072354041324297977425133028232.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4734\17072278064114179944485149825082.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4734\1707227818666249835907662429638.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4735\17090534488925632890100282282373.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4738\IMG_20240227_123932_023.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4740\IMG_20240227_123932_023.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4743\IMG_20240227_123932_023.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4744\IMG_20240227_123932_023.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4745\IMG_20240227_123932_023.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4752\17074031450708200591159488435575.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4753\17074001011483974943972980542064.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4764\17073391066496099339276526115781.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4765\17073389826605721739869576799283.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4765\17073390181742008359538834357121.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4769\17073393377866878820106433142151.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4828\17071507829991933848652754074554.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4829\16922076803181915845525986560944.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4830\17073985964476120229749925699655.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4830\17073996238057282299447211641008.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4831\17072304679278269817317238909960.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4832\IMG_20240209_121511_521.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4833\17072498007596941049240743967329.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4834\1707227720625179943383118192966.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4834\17072277446566127699519056270328.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4836\17072491833475824319321897500753.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4837\17072352248247989670797846477295.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4838\17072366850347728880538987733416.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4839\17074037323894544319492022439081.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4840\IMG_20240209_122631_716.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4995\1692218999225353090362672672969.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4998\17074919357779125341428319007746.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4998\17074922503284401768529987904314.jpg" />
+    <Content Include="ImagenesDeLosEquipos\4999\16922184739225587507693143810885.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5001\16921180325617722924755943856476.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5002\IMG_20240229_104412_308.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5003\16921177517528736041560336652296.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5005\17071500422754874091497814531331.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5014\17073995596792798608335801537045.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5023\17072306392764531595333405624505.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5023\17072306592196846159622666722266.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5024\17150931764253252392957923278428.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5034\17072285785031087573610301648521.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5036\17071617498163331756198865820104.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5038\17074926010058137509112461730489.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5039\1715102860919274234849771876982.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5041\16916773723663526227995640965035.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5053\16916805036477366142682486720377.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5107\17089818967793534355467399754207.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5107\5107.png" />
+    <Content Include="ImagenesDeLosEquipos\5108\17072498775018994149514440423209.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5108\5108.png" />
+    <Content Include="ImagenesDeLosEquipos\5120\17089589616672629374513230109586.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5122\17151789496914812529197664828202.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5123\17074974293337085224265648598650.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5124\17072490877588301563850261817575.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5124\5124.png" />
+    <Content Include="ImagenesDeLosEquipos\5125\17080063110337295634192764652198.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5125\5125.png" />
+    <Content Include="ImagenesDeLosEquipos\5126\17072381180534463897839734585019.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5126\5126.png" />
+    <Content Include="ImagenesDeLosEquipos\5127\17072367348658103228078562620018.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5127\5127.png" />
+    <Content Include="ImagenesDeLosEquipos\5128\17074969858545297532505449999123.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5129\17072346740637966728422999682153.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5129\5129.png" />
+    <Content Include="ImagenesDeLosEquipos\5130\17072481855948264150088712712665.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5130\5130.png" />
+    <Content Include="ImagenesDeLosEquipos\5131\17073361378344314756120035072437.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5131\5131.png" />
+    <Content Include="ImagenesDeLosEquipos\5133\17074239008598458532546192429462.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5133\5133.png" />
+    <Content Include="ImagenesDeLosEquipos\5134\17079179700092944939410585497608.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5134\5134.png" />
+    <Content Include="ImagenesDeLosEquipos\5135\17074232684821307994655432627020.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5135\5135.png" />
+    <Content Include="ImagenesDeLosEquipos\5136\17074920549323187129800511882144.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5137\17072302119849048310161347350188.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5138\16921179660866671141001022284164.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5139\17074023362418505225541866511739.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5139\5139.png" />
+    <Content Include="ImagenesDeLosEquipos\5140\1692206000008544672689593542933.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5140\5140.png" />
+    <Content Include="ImagenesDeLosEquipos\5141\1707228924406248812055441180046.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5141\17072289456866496252798596207701.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5142\17072282759276500196865774954924.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5142\17072282893537101685390117671125.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5143\17089594598128262286316437786248.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5144\17073368515983234895921312393596.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5144\5144.png" />
+    <Content Include="ImagenesDeLosEquipos\5146\IMG_20240229_104418_842.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5147\16916845738975092236805960766658.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5148\17072329137891767467528779564297.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5149\IMG_20240209_122627_519.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5150\IMG_20240209_121032_896.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5151\17074242124973725411315599746161.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5151\17074242261833632761053674477095.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5151\5151.png" />
+    <Content Include="ImagenesDeLosEquipos\5152\16922072113894266387099289999195.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5152\5152.png" />
+    <Content Include="ImagenesDeLosEquipos\5153\16911799978985167913160695828560.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5153\IMG_20230810_101713_881~2.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5154\17069072431414959208264432955282.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5154\17069072868333806186733626543256.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5154\17069073405162680916623162654657.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5155\51555.png" />
+    <Content Include="ImagenesDeLosEquipos\5156\17072302967922741103932850693258.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5157\IMG_20230810_101646_415~2.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5158\IMG_20240209_121519_450.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5159\IMG_20230810_112136_685~2.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5160\IMG_20230810_085620_306~2.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5161\IMG_20230810_111316_650~2.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5162\17073353115292789968385671158944.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5163\17072379774022208861541058423048.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5164\17072380651503658448379928484881.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5165\17073118204151923252268729442909.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5166\1708006264403106106707534392520.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5167\17072363555715642527415547669455.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5168\17072368532432461703511719567814.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5169\1707496833590162663940043676757.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5170\17074967853441298320549642825183.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5171\17074972172642962550546478001287.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5172\17074971237802956146793708723618.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5173\17072473044802518362106036471964.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5174\17072516983632014563921104010592.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5174\17072518569698273408802148428408.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5175\17072344626432041063564909914534.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5176\1707234502045564619550632773314.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5177\17072479398234131580856547534703.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5178\17072479698582150315456308521842.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5179\17073363095417685621403780812894.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5179\17073363680723017318978725798646.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5181\17074240731868815974332129793014.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5183\17074235545957832413464015244312.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5184\17074935214361274084968811727835.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5185\17074025282535971800255630184064.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5186\17074982617142041479974947940680.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5187\IMG_20240209_115638_695.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5189\17151025428686994184595717298141.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5191\16921191599623156010240479108934.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5192\17072295294197505522367009882645.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5192\17072295500638834611807338803013.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5194\1707235109694516725382700407582.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5195\17072379413547529574401555405469.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5196\1707237076404142475005993036211.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5198\17073356936223575083082187879945.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5199\17074968986215356982631460979470.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5200\17074973353604825828197170079517.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5201\16921181783082487664809482159177.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5202\17072473879129204407320455667826.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5203\17072480153007847522085028519201.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5204\17073117605992614038051913486029.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5205\1707252313756720813264023430981.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5206\17079179200891237024121753779002.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5207\17069068776557858286880551849308.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5211\1707233611101554367514785485923.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5212\17074036025277933729951370054213.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5213\1707143068495478871685781766021.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5216\17071457335474147584335406283950.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5217\170714581766982535263459470780.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5220\IMG_20240227_094853_453.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5220\IMG_20240227_094901_568.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5228\17071470475016255472864176498217.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5236\5236.png" />
+    <Content Include="ImagenesDeLosEquipos\5236\IMG_20240227_102815_604.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5236\IMG_20240229_105143_718.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5237\1715608079104422153944934402889.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5238\17074961742052774398340529273859.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5242\17074943998756256343597921479144.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5244\1707423506939781636293490148849.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5245\IMG_20240229_102822_305.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5246\16921169363442746271516269501945.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5246\16921171422402038443721972409083.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5247\17072294573152206278746542216371.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5247\1707229483583443833383380559475.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5248\17072334525117860676943138673205.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5249\17074939520533843514226966007596.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5250\17073998125863375672941190269331.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5250\5250.png" />
+    <Content Include="ImagenesDeLosEquipos\5254\17090557935102080312824316701489.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5255\169221787211154524983184567913.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5256\IMG_20240229_104023_844.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5257\16921176591548908455076499980116.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5258\17074936208922895093274678436746.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5259\17151798991486206934767910832542.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5260\17151799502065728659192247363738.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5261\17151816166556153853952969748371.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5262\17151800474118759424413035646052.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5263\17151800999376220307921593812546.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5264\17151815378081030991050329390620.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5265\17151798421445833007975739893674.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5266\1715181650529553575030953348121.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5267\17151815655585664678860323996901.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5268\17151800000286592054445540078153.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5270\17151814816717371743474629837721.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5272\17151805840992174248957217947938.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5274\17151794798572672969147947298578.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5275\17151793983301602127349152808347.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5280\1715181449154269384949340183354.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5281\17151806405408171113536338341460.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5282\17151795202412305352349597633742.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5283\17151794447544116401262630687009.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5287\17151801799307392532365457468023.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5289\17150932020135541506472012286273.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5290\17150944463547373107934653154479.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5296\17151804832733432061326775505563.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5297\1715180306859761896465182814629.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5298\17151802681212348827786241980774.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5299\17151803853378563918387002440025.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5300\17151816836596285783178564848569.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5301\17151041684304809436904971933006.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5302\17151802160628006274611544577897.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5303\17151801422851781159321757326338.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5304\17151795591954222910323090207777.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5305\17151817707727343364433954137055.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5306\17151818000382345537868007820296.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5307\17151797056987547737535119176956.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5308\17151797731543242260619867466893.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5309\17151796667471972816959770467736.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5310\1715181833109390488709298945765.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5311\17151797413995107091550613324107.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5312\17151819059498411402182912959319.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5313\17151818632501155022500916966039.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5316\IMG_20240209_122636_419.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5318\1715093813054970848818438078277.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5319\17090497825382177692411489649659.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5320\16916957053634550577755630463315.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5324\17071472247236823089413997588435.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5325\16916958211968013161742126465438.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5328\17151803436427956984979109692999.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5329\17151817341391746007901476602747.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5331\IMG_20240229_105004_660.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5334\17090551497644711505785060567998.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5335\17090552211181324699707444669373.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5336\17090551856785862373595005885644.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5337\17071442301573642456845725027143.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5338\17089585697347074110724897024492.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5346\1707918871966195555492819418239.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5361\IMG_20240227_102815_604.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5362\17090476684114966657396908121780.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5363\IMG_20240227_102815_604.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5364\IMG_20240227_102815_604.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5365\IMG_20240227_102815_604.jpg" />
+    <Content Include="ImagenesDeLosEquipos\5378\17156082143193722767777077822048.jpg" />
+    <Content Include="ImagenesDeLosEquipos\543\16923749666658585792555877371116.jpg" />
+    <Content Include="ImagenesDeLosEquipos\634\17074957099781493971375717680283.jpg" />
+    <Content Include="ImagenesDeLosEquipos\65\IMG_20240514_084059_828.jpg" />
+    <Content Include="ImagenesDeLosEquipos\660\IMG_20240209_122624_260.jpg" />
+    <Content Include="ImagenesDeLosEquipos\678\17074969382853154852554794108810.jpg" />
+    <Content Include="ImagenesDeLosEquipos\846\IMG_20240229_105819_796.jpg" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\0006.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\0007.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\0009.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\0015.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\0027.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\0053.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\0057.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\0060.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\0063.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\0094.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\0095.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\0096.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\0097.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\0098.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\106.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\1113.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\144.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\1658.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\172.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\2586.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\3501.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\3503.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\3504.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\3505.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\3548.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\3588.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\3589.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\3592.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\3697.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\3956.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\3995.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\4025.PNG" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\4373.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\5107.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\5108.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\5124.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\5125.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\5126.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\5127.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\5129.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\5130.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\5131.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\5133.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\5134.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\5135.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\5139.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\5140.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\5144.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\5151.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\5152.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\5155.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\5236.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\5250.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\575.png" />
+    <Content Include="ImagenesDeLosEquipos\Anteriores\laptop sin codigo arq valencia.png" />
+    <Content Include="ImagenesDeLosEquipos\codigo bat para creear carpetas\Nuevo documento de texto.txt" />
+    <Content Include="ImagenesDeLosEquipos\QQQQ.jpg" />
+    <Content Include="ImagenesDeLosEquipos\TELEFONO.jpg" />
+    <Content Include="ImagenesDeLosEquipos\Thumbnail\17072373695476025272514819240615.jpg" />
+    <Content Include="ImagenesDeLosEquipos\Thumbnail\17074249652947057944162917871883.jpg" />
+    <Content Include="ImagenesDeLosEquipos\Thumbnail\57.png" />
+    <Content Include="Img\AA_ADM2327.jpg" />
+    <Content Include="Img\logo.png" />
+    <Content Include="pruebas.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Site.Master" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+    <Content Include="Site.Mobile.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="FrmAñadirToner.aspx.cs">
+      <DependentUpon>FrmAñadirToner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmAñadirToner.aspx.designer.cs">
+      <DependentUpon>FrmAñadirToner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEquipo.aspx.cs">
+      <DependentUpon>FrmEquipo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmEquipo.aspx.designer.cs">
+      <DependentUpon>FrmEquipo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmError.aspx.cs">
+      <DependentUpon>FrmError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmError.aspx.designer.cs">
+      <DependentUpon>FrmError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGridRepuestos.aspx.cs">
+      <DependentUpon>FrmGridRepuestos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmGridRepuestos.aspx.designer.cs">
+      <DependentUpon>FrmGridRepuestos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGridToners.aspx.cs">
+      <DependentUpon>FrmGridToners.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmGridToners.aspx.designer.cs">
+      <DependentUpon>FrmGridToners.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInicio.aspx.cs">
+      <DependentUpon>FrmInicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmInicio.aspx.designer.cs">
+      <DependentUpon>FrmInicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMantenimiento.aspx.cs">
+      <DependentUpon>FrmMantenimiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmMantenimiento.aspx.designer.cs">
+      <DependentUpon>FrmMantenimiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMigrarCustodios.aspx.cs">
+      <DependentUpon>FrmMigrarCustodios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMigrarCustodios.aspx.designer.cs">
+      <DependentUpon>FrmMigrarCustodios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMigrarToners.aspx.cs">
+      <DependentUpon>FrmMigrarToners.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMigrarToners.aspx.designer.cs">
+      <DependentUpon>FrmMigrarToners.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrincipal.aspx.cs">
+      <DependentUpon>FrmPrincipal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmPrincipal.aspx.designer.cs">
+      <DependentUpon>FrmPrincipal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReportes.aspx.cs">
+      <DependentUpon>FrmReportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmReportes.aspx.designer.cs">
+      <DependentUpon>FrmReportes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRepuestos.aspx.cs">
+      <DependentUpon>FrmRepuestos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmRepuestos.aspx.designer.cs">
+      <DependentUpon>FrmRepuestos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmToner.aspx.cs">
+      <DependentUpon>FrmToner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmToner.aspx.designer.cs">
+      <DependentUpon>FrmToner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVisorImagenes.aspx.cs">
+      <DependentUpon>FrmVisorImagenes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmVisorImagenes.aspx.designer.cs">
+      <DependentUpon>FrmVisorImagenes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmYupak.aspx.cs">
+      <DependentUpon>FrmYupak.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmYupak.aspx.designer.cs">
+      <DependentUpon>FrmYupak.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Logger.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="pruebas.aspx.cs">
+      <DependentUpon>pruebas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pruebas.aspx.designer.cs">
+      <DependentUpon>pruebas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="ImagenesDeLosEquipos\0004\" />
+    <Folder Include="ImagenesDeLosEquipos\0016\" />
+    <Folder Include="ImagenesDeLosEquipos\2004\" />
+    <Folder Include="ImagenesDeLosEquipos\2568\" />
+    <Folder Include="ImagenesDeLosEquipos\2569\" />
+    <Folder Include="ImagenesDeLosEquipos\3695\" />
+    <Folder Include="ImagenesDeLosEquipos\3939\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51341</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51341/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

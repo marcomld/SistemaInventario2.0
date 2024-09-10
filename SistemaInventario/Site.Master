@@ -1,0 +1,227 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="SistemaInventario.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="es">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS de DataTables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- JS de DataTables -->
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <link href="~/Content/css" rel="stylesheet" type="text/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <style>
+        .full-width {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .navbar {
+            margin-bottom: 50px; /* Ajustar el margen inferior para evitar superposición con el título */
+        }
+
+        /* Añadir margen superior al contenido principal para evitar superposición con el título fijo */
+        .body-content {
+            margin-top: 0; /* Ajustar según la altura combinada de la barra de navegación y el título */
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 10px; /* Espacio alrededor del contenedor */
+            box-sizing: border-box; /* Incluye padding en el cálculo del ancho total */
+            background-color: #f0f0f0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
+            margin-bottom: 15px; /* Ajusta el espacio debajo del contenedor */
+        }
+
+        .header-title {
+            flex: 1;
+            display: flex;
+            justify-content: center; /* Centra el contenido del div */
+            margin: 0;
+        }
+
+            .header-title h1 {
+                margin: 0;
+                font-size: 24px;
+                color: #333;
+                text-transform: uppercase; /* Texto en mayúsculas */
+                font-family: 'Roboto', sans-serif; /* Ejemplo de fuente personalizada */
+            }
+
+        .database-label {
+            font-size: small; /* Ajusta el tamaño de la fuente según tu preferencia */
+        }
+
+        .icon-button {
+            width: 40px; /* Tamaño del botón */
+            height: 40px; /* Tamaño del botón */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none; /* Elimina el borde predeterminado */
+            background: transparent; /* Fondo transparente */
+            cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+            font-size: 30px; /* Tamaño del icono */
+            color: #00008B; /* Color del icono */
+            text-align: center; /* Centra el icono en el botón */
+            transition: color 0.3s; /* Efecto de transición para el color */
+            margin: 0px 5px;
+        }
+
+            .icon-button:hover {
+                color: #4682B4; /* Color del icono al pasar el ratón */
+                transform: scale(1.05); /* Efecto de agrandamiento */
+            }
+
+            .icon-button:active {
+                transform: scale(0.95); /* Efecto de disminución al hacer clic */
+            }
+
+        .btnEquipo {
+            background-color: #02569e; /* Color de fondo verde */
+            color: white; /* Color del texto */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Bordes redondeados */
+            padding: 7px 14px; /* Espaciado interno */
+            text-align: center; /* Alineación del texto */
+            text-decoration: none; /* Sin subrayado */
+            display: inline-block; /* Mostrar como un bloque en línea */
+            font-size: 14px; /* Tamaño de la fuente */
+            cursor: pointer; /* Cursor tipo puntero al pasar sobre el botón */
+            transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+            margin: 3px; /* Espacio entre botones */
+        }
+
+            /* Efecto hover */
+            .btnEquipo:hover {
+                background-color: #00008b; /* Color más oscuro al pasar el mouse */
+                transform: scale(1.05); /* Efecto de agrandamiento */
+                color: white; /* Color del texto */
+            }
+
+            /* Efecto activo (al hacer clic) */
+            .btnEquipo:active {
+                transform: scale(0.95); /* Efecto de disminución al hacer clic */
+            }
+    </style>
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container" style="width: 90%">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div style="float: left; margin-right: 10px; padding-top: 8px;">
+                        <img src="<%= ResolveUrl("~/Img/logo.png") %>" alt="Logo" style="height: 30px;">
+                    </div>
+                    <a class="navbar-brand" id="Principal" href="FrmPrincipal.aspx" runat="server">INVENTARIO INFORMATICO</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" id="GridToners" href="FrmGridToners">TONERS</a></li>
+                        <li><a runat="server" id="GridRepuestos" href="FrmGridRepuestos">REPUESTOS</a></li>
+                        <li><a runat="server" id="MigrarCustodios" href="FrmMigrarCustodios.aspx">MIGRAR CUSTODIOS</a></li>
+                        <li><a runat="server" id="MigrarToners" href="FrmMigrarToners.aspx">MIGRAR TONERS</a></li>
+                        <li class="dropdown">
+                            <a href="#" runat="server" id="Reportes" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">REPORTES <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu reportes-menu" role="menu">
+                                <li><a href="FrmReportes" runat="server" id="Method1">Todos</a></li>
+                                <li><a href="FrmReportes.aspx?codigoActivo=IT_Equipos" runat="server" id="Method2" onclick="Method2_Click">Equipos</a></li>
+                                <li><a href="FrmReportes.aspx?codigoActivo=IT_Toners" runat="server" id="Method3">Toners</a></li>
+                                <li><a href="FrmReportes.aspx?codigoActivo=IT_Repuestos" runat="server" id="Method4">Repuestos</a></li>
+                                <li><a href="FrmReportes.aspx?codigoActivo=EquiposNoUsados" runat="server" id="Method5">Equipos No Usados</a></li>
+                            </ul>
+                        </li>
+
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <asp:PlaceHolder ID="phUser" runat="server">
+                            <li><a runat="server" id="Iniciar" href="~/FrmIniciarSesion.aspx">Iniciar Sesión</a></li>
+                        </asp:PlaceHolder>
+
+                        <asp:PlaceHolder ID="phLoggedUser" runat="server" Visible="false">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <span class="glyphicon glyphicon-user"></span>
+                                    <asp:Label ID="lblUserName" runat="server" Text=""></asp:Label>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#" onclick="document.getElementById('<%= btnCerrarSesion.ClientID %>').click();">Cerrar Sesión</a></li>
+                                </ul>
+                            </li>
+                        </asp:PlaceHolder>
+                        <asp:Button ID="btnCerrarSesion" runat="server" OnClick="btnCerrarSesion_Click" Style="display: none;" />
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Div para mostrar el título de la página -->
+
+        <div class="header-container">
+            <div class="header-title">
+                <h1>
+                    <asp:Literal runat="server" ID="LiteralPageTitle"></asp:Literal></h1>
+            </div>
+            <asp:Label ID="DatabaseLabel" runat="server" CssClass="database-label"></asp:Label>
+        </div>
+
+        <div class="container body-content full-width">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+
+</html>
