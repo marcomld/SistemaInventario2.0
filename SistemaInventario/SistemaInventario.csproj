@@ -120,7 +120,6 @@
     <Content Include="FrmGridRepuestos.aspx" />
     <Content Include="FrmGridToners.aspx" />
     <Content Include="Default.aspx" />
-    <Content Include="FrmInicio.aspx" />
     <Content Include="FrmMantenimiento.aspx" />
     <Content Include="FrmMigrarCustodios.aspx" />
     <Content Include="FrmMigrarToners.aspx" />
@@ -955,8 +954,8 @@
     <Content Include="ImagenesDeLosEquipos\Thumbnail\17074249652947057944162917871883.jpg" />
     <Content Include="ImagenesDeLosEquipos\Thumbnail\57.png" />
     <Content Include="Img\AA_ADM2327.jpg" />
+    <Content Include="Img\controlar.png" />
     <Content Include="Img\logo.png" />
-    <Content Include="pruebas.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -1036,13 +1035,6 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FrmInicio.aspx.cs">
-      <DependentUpon>FrmInicio.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="FrmInicio.aspx.designer.cs">
-      <DependentUpon>FrmInicio.aspx</DependentUpon>
-    </Compile>
     <Compile Include="FrmMantenimiento.aspx.cs">
       <DependentUpon>FrmMantenimiento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1108,13 +1100,6 @@
     </Compile>
     <Compile Include="Logger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="pruebas.aspx.cs">
-      <DependentUpon>pruebas.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pruebas.aspx.designer.cs">
-      <DependentUpon>pruebas.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -17,55 +17,80 @@ namespace SistemaInventario
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
-            string codigoIngresado = txtCodigo.Text.Trim(); // Obtener el código ingresado y eliminar espacios en blanco
+            // Obtener los valores ingresados por el usuario
+            string cedulaIngresada = txtCedula.Text.Trim();
+            string claveIngresada = txtClave.Text.Trim();
 
-            if (string.IsNullOrEmpty(codigoIngresado))
+            // Validar que ambos campos estén llenos
+            if (string.IsNullOrEmpty(cedulaIngresada) || string.IsNullOrEmpty(claveIngresada))
             {
-                // Opcional: Manejar el caso en que el campo está vacío.
-                // Puedes mostrar un mensaje de error al usuario aquí.
+                ScriptManager.RegisterStartupScript(this, GetType(), "alertMessage", $"alert('Por favor, complete ambos campos.');", true);
                 return;
             }
 
-            // Definir la cadena de conexión
+            // Cadena de conexión
             string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["BDDSistemasConnectionString"].ConnectionString;
 
-            // Consulta SQL para verificar si el código existe
-            string query = "SELECT [CodigoUsuario] FROM [IT_Usuarios] WHERE [CodigoUsuario] = @CodigoUsuario";
+            // Primera consulta: verificar cédula y contraseña en la tabla Usuarios
+            string queryUsuario = "SELECT IDUsuario, Usuario FROM Usuarios WHERE Cedula = @Cedula AND Clave = @Clave";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@CodigoUsuario", codigoIngresado);
+                SqlCommand commandUsuario = new SqlCommand(queryUsuario, connection);
+                commandUsuario.Parameters.AddWithValue("@Cedula", cedulaIngresada);
+                commandUsuario.Parameters.AddWithValue("@Clave", claveIngresada);
 
                 try
                 {
                     connection.Open();
-                    object result = command.ExecuteScalar();
-
-                    if (result != null)
+                    using (SqlDataReader reader = commandUsuario.ExecuteReader())
                     {
-                        // Crear una instancia de Logger
-                        Logger logger = new Logger();
-                        string usuario = logger.ObtenerNombreUsuario(codigoIngresado);
+                        if (reader.Read())
+                        {
+                            int idUsuario = reader.GetInt32(0); // Obtener IDUsuario
+                            string nombreUsuario = reader.GetString(1); // Obtener Nombre
 
-                        Session["Usuario"] = usuario;
-                        // Código válido, guarda el código en la sesión
-                        Session["CodigoUnico"] = codigoIngresado;
-                        Response.Redirect($"FrmPrincipal.aspx");
-                    }
-                    else
-                    {
-                        // Muestra un mensaje de error si ocurre alguna excepción
-                        string errorMessage = $"El código es incorrecto";
-                        ScriptManager.RegisterStartupScript(this, GetType(), "alertMessage", $"alert('{errorMessage}');", true);
+                            // Segunda consulta: verificar acceso en la tabla AccesoUsuarioSistemas
+                            string queryAcceso = "SELECT COUNT(*) FROM AccesoUsuarioSistemas WHERE IDUsuario = @IDUsuario AND IDSistema = @IDSistema";
+                            SqlCommand commandAcceso = new SqlCommand(queryAcceso, connection);
+                            commandAcceso.Parameters.AddWithValue("@IDUsuario", idUsuario);
+                            commandAcceso.Parameters.AddWithValue("@IDSistema", 1); // IDSistema es fijo en este caso
+
+                            reader.Close(); // Cerrar el reader antes de ejecutar otra consulta en la misma conexión
+
+                            int accesoResult = (int)commandAcceso.ExecuteScalar();
+
+                            if (accesoResult > 0)
+                            {
+                                // Acceso concedido, guardar información en la sesión
+                                Session["IDUsuario"] = idUsuario;
+                                Session["Usuario"] = nombreUsuario;
+                                Session["Autenticado"] = true; // Confirmación de autenticación
+
+                                ScriptManager.RegisterStartupScript(this, GetType(), "alertMessage", $"alert('¡Autenticación exitosa! Bienvenido, {nombreUsuario}.');", true);
+                                Response.Redirect("FrmPrincipal.aspx");
+                            }
+                            else
+                            {
+                                // Usuario no tiene acceso al sistema
+                                ScriptManager.RegisterStartupScript(this, GetType(), "alertMessage", $"alert('No tiene acceso a este sistema.');", true);
+                            }
+                        }
+                        else
+                        {
+                            // Cédula o clave incorrecta
+                            ScriptManager.RegisterStartupScript(this, GetType(), "alertMessage", $"alert('Cédula o contraseña incorrecta.');", true);
+                        }
                     }
                 }
                 catch (Exception ex)
                 {
-                    // Opcional: Manejar excepciones, como errores de conexión.
-                    ScriptManager.RegisterStartupScript(this, GetType(), "alertMessage", $"alert('{ex}');", true);
+                    // Manejar excepciones, como errores de conexión
+                    ScriptManager.RegisterStartupScript(this, GetType(), "alertMessage", $"alert('Error: {ex.Message}');", true);
                 }
             }
+
+
         }
 
     }

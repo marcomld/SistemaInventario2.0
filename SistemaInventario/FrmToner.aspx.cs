@@ -46,15 +46,6 @@ namespace SistemaInventario
 
             if (!IsPostBack)
             {
-                // Obtener el código único de la sesión
-                string codigoUnico = Session["CodigoUnico"] as string;
-                if (string.IsNullOrEmpty(codigoUnico))
-                {
-                    // Redirige a la página de error si no hay un código único en la sesión
-                    Response.Redirect("~/FrmError.aspx");
-                    return;
-                }
-
                 // Código válido, continúa con la lógica de la página
                 LlenarTextBoxsToner(IDToner);
 

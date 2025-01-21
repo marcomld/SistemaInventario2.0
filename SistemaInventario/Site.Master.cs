@@ -14,13 +14,48 @@ namespace SistemaInventario
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                ValidarAutenticacion();
+                ManejarVisibilidadNavbar();
+            }
+        }
+
+        // Validar autenticación del usuario
+        private void ValidarAutenticacion()
+        {
+            string currentPage = System.IO.Path.GetFileName(Request.Url.AbsolutePath);
+            List<string> paginasExcluidas = new List<string> { "Default", "Default.aspx", "FrmError.aspx" };
+
+            if (paginasExcluidas.Contains(currentPage))
+            {
+                // No realizar validación para páginas excluidas
+                return;
+            }
+
+            bool? autenticado = Session["Autenticado"] as bool?;
+
+            if (autenticado == null || autenticado == false)
+            {
+                // Redirigir a la página de error si no está autenticado
+                Response.Redirect("~/Default.aspx");
+            }
+        }
+
+        // Manejar visibilidad de los elementos en la navbar
+        private void ManejarVisibilidadNavbar()
+        {
             if (Session["Usuario"] != null)
             {
+                // Usuario autenticado
                 phUser.Visible = false;
                 phLoggedUser.Visible = true;
+
+                // Muestra el nombre del usuario
                 lblUserName.Text = Session["Usuario"].ToString();
-                // Mostrar las pestañas cuando el usuario está autenticado
-                Principal.Visible = true; 
+
+                // Muestra las pestañas relevantes
+                Principal.Visible = true;
                 GridToners.Visible = true;
                 GridRepuestos.Visible = true;
                 MigrarCustodios.Visible = true;
@@ -29,16 +64,16 @@ namespace SistemaInventario
                 Iniciar.Visible = true;
                 DatabaseLabel.Visible = true;
 
-                // Obtén el nombre de la base de datos y actualiza el texto de la etiqueta
-                DatabaseLabel.Text = "" + DatabaseHelper.GetDatabaseNameFromConnectionString();
-
-
+                // Actualiza el nombre de la base de datos
+                DatabaseLabel.Text = DatabaseHelper.GetDatabaseNameFromConnectionString();
             }
             else
             {
+                // Usuario no autenticado
                 phUser.Visible = true;
                 phLoggedUser.Visible = false;
-                // Ocultar las pestañas cuando el usuario no está autenticado
+
+                // Oculta las pestañas relevantes
                 Principal.Visible = false;
                 GridToners.Visible = false;
                 GridRepuestos.Visible = false;
@@ -49,14 +84,13 @@ namespace SistemaInventario
                 DatabaseLabel.Visible = false;
             }
         }
+
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-            Session["Usuario"] = null;
-            Session["CodigoUnico"] = null;
+            // Limpiar variables de sesión y redirigir al inicio
+            Session.Clear();
             Response.Redirect("Default.aspx");
         }
-
-
     }
 
     public static class DatabaseHelper

@@ -59,19 +59,6 @@ namespace SistemaInventario
 
             if (!IsPostBack)
             {
-                // Obtener el código único de la sesión
-                string codigoUnico = Session["CodigoUnico"] as string;
-
-                if (string.IsNullOrEmpty(codigoUnico))
-                {
-                    // Si no hay un código único en la sesión, redirige a la página de error
-                    Response.Redirect("~/FrmError.aspx");
-                }
-                else
-                {
-                    // Código válido, continúa con la lógica de la página
-                }
-
                 // Si es la primera vez que se carga la página, desactivar los botones
                 btnCargarMatrizNuevos.Enabled = false;
                 btnMigrar.Enabled = false;

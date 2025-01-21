@@ -25,22 +25,6 @@ namespace SistemaInventario
                 literalPageTitle.Text = "Reportes"; // Asigna el título visible en el <div>
             }
 
-            if (!IsPostBack)
-            {
-                // Obtener el código único de la sesión
-                string codigoUnico = Session["CodigoUnico"] as string;
-
-                if (string.IsNullOrEmpty(codigoUnico))
-                {
-                    // Si no hay un código único en la sesión, redirige a la página de error
-                    Response.Redirect("~/FrmError.aspx");
-                }
-                else
-                {
-                    // GridView1.DataBind(); // Esto puede estar comentado si no necesitas hacer un DataBind en el Page_Load
-                }
-            }
-
             // Leer el parámetro de consulta "codigoActivo"
             string codigoActivo = Request.QueryString["codigoActivo"];
 
