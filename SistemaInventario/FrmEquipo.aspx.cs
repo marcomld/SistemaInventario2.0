@@ -208,19 +208,6 @@ namespace SistemaInventario
 
                 if (!IsPostBack)
                 {
-                    // Obtener el código único de la sesión
-                    string codigoUnico = Session["CodigoUnico"] as string;
-
-                    if (string.IsNullOrEmpty(codigoUnico))
-                    {
-                        // Si no hay un código único en la sesión, redirige a la página de error
-                        Response.Redirect("~/FrmError.aspx");
-                    }
-                    else
-                    {
-                        // Código válido, continúa con la lógica de la página
-                    }
-
                     // Bindear el DropDownList al SqlDataSource solo en la primera carga
                     ddlCustodio.DataSource = SqlDataSourceCustodios;
                     ddlCustodio.DataTextField = "Nombres";

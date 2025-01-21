@@ -55,48 +55,36 @@ namespace SistemaInventario
 
             if (!IsPostBack)
             {
-
-                // Obtener el código único de la sesión
-                string codigoUnico = Session["CodigoUnico"] as string;
-
-                if (string.IsNullOrEmpty(codigoUnico))
+                // Establecer la cadena de conexión
+                using (SqlConnection connection = new SqlConnection(connectionStringBDDSistemas))
                 {
-                    // Si no hay un código único en la sesión, redirige a la página de error
-                    Response.Redirect("~/FrmError.aspx");
-                }
-                else
-                {
-                    // Establecer la cadena de conexión
-                    using (SqlConnection connection = new SqlConnection(connectionStringBDDSistemas))
-                    {
-                        connection.Open();
+                    connection.Open();
 
-                        // Consulta para obtener el registro correspondiente al código activo
-                        string query = @"
+                    // Consulta para obtener el registro correspondiente al código activo
+                    string query = @"
                 SELECT [EquipoTipo], [CedulaCustodio], [Marca], [Modelo], [Serie], [Ubicacion]
                 FROM [IT_Equipos]
                 WHERE [CodigoActivo] = @CodigoActivo";
 
-                        using (SqlCommand command = new SqlCommand(query, connection))
-                        {
-                            command.Parameters.AddWithValue("@CodigoActivo", codigoActivo);
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@CodigoActivo", codigoActivo);
 
-                            using (SqlDataReader reader = command.ExecuteReader())
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
                             {
-                                if (reader.Read())
-                                {
-                                    // Asignar valores a las variables estáticas
-                                    EquipoTipo = reader["EquipoTipo"].ToString();
-                                    CedulaCustodio = reader["CedulaCustodio"].ToString();
-                                    Marca = reader["Marca"].ToString();
-                                    Modelo = reader["Modelo"].ToString();
-                                    Serie = reader["Serie"].ToString();
-                                    Ubicacion = reader["Ubicacion"].ToString();
-                                }
-                                else
-                                {
-                                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('No se encontró el equipo con el código activo proporcionado.');", true);
-                                }
+                                // Asignar valores a las variables estáticas
+                                EquipoTipo = reader["EquipoTipo"].ToString();
+                                CedulaCustodio = reader["CedulaCustodio"].ToString();
+                                Marca = reader["Marca"].ToString();
+                                Modelo = reader["Modelo"].ToString();
+                                Serie = reader["Serie"].ToString();
+                                Ubicacion = reader["Ubicacion"].ToString();
+                            }
+                            else
+                            {
+                                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('No se encontró el equipo con el código activo proporcionado.');", true);
                             }
                         }
                     }

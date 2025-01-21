@@ -29,47 +29,7 @@ namespace SistemaInventario
 
             lblRegistros.Text = GridViewEquipos.Rows.Count.ToString();
 
-            if (!IsPostBack)
-            {
-                //Obtener el código único de la sesión
-                string codigoUnico = Session["CodigoUnico"] as string;
-
-                if (string.IsNullOrEmpty(codigoUnico))
-                {
-                    // Si no hay un código único en la sesión, redirige a la página de error
-                    Response.Redirect("~/FrmError.aspx");
-                }
-                else
-                {
-                    // Código válido, continúa con la lógica de la página
-                }
-            }
-            else
-            {
-                // Manejar acciones postback si es necesario
-                lblRegistros.Text = GridViewEquipos.Rows.Count.ToString();
-            }
         }
-
-        //protected bool CodigoUnicoValidoEnBaseDeDatos(string codigo)
-        //{
-        //    // Aquí deberías consultar tu base de datos para verificar si 'codigo' existe y es válido
-        //    bool codigoValido = false;
-
-        //    // Lógica para verificar en la base de datos
-        //    using (SqlConnection connection = new SqlConnection(connectionStringBDDSistemas))
-        //    {
-        //        string query = "SELECT COUNT(*) FROM IT_Usuarios WHERE CodigoUsuario = @Codigo";
-        //        SqlCommand command = new SqlCommand(query, connection);
-        //        command.Parameters.AddWithValue("@Codigo", codigo);
-        //        connection.Open();
-        //        int count = (int)command.ExecuteScalar();
-        //        codigoValido = (count > 0);
-        //    }
-
-        //    return codigoValido;
-        //}
-
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
             // Verifica si el cuadro de texto está vacío

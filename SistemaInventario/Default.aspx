@@ -102,16 +102,15 @@
     </style>
 
     <div class="login-container">
-        <h2>Inicia sesión en tu cuenta</h2>
-        <p>Ingresa tu código de acceso</p>
-
+        <h2>Inicia sesión con tus credenciales</h2>
         <asp:Panel ID="pnlInicioSesion" runat="server">
             <div class="form-group">
-                <!-- Otros elementos, si es necesario -->
+                <asp:Label ID="lblCedula" runat="server" Text="Cédula de Identidad:" />
+                <asp:TextBox ID="txtCedula" runat="server" CssClass="form-control" onkeypress="handleEnterKey(event)"></asp:TextBox>
             </div>
             <div class="form-group">
-                <asp:Label ID="lblContraseña" runat="server" Text="Código de acceso:" />
-                <asp:TextBox ID="txtCodigo" runat="server" TextMode="Password" CssClass="form-control" onkeypress="handleEnterKey(event)"></asp:TextBox>
+                <asp:Label ID="lblContraseña" runat="server" Text="Contraseña:" />
+                <asp:TextBox ID="txtClave" runat="server" TextMode="Password" CssClass="form-control" onkeypress="handleEnterKey(event)"></asp:TextBox>
             </div>
         </asp:Panel>
         <asp:Label ID="lblMensaje" runat="server" Text="" CssClass="text-danger"></asp:Label>
@@ -119,6 +118,7 @@
             <asp:Button ID="btnIngresar" runat="server" Text="Iniciar sesión" CssClass="btn btn-primary" OnClick="btnIngresar_Click" />
         </div>
     </div>
+
     <script type="text/javascript">
         function handleEnterKey(event) {
             if (event.key === 'Enter') {
